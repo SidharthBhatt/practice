@@ -8,18 +8,23 @@ class Solution:
         return bool(temp == reverse)
         
         # pure math method 
-        # if x < 0:
-        #     return False
-        # if x < 10:
-        #     return True; 
-        # temp = x
-        # reverse = 0
-        # while (temp > 0):
-        #     reverse = reverse*10 + temp%10 
-        #     temp = math.floor(temp/10)
-        # print(x)
-        # print(reverse)
-        # return bool(x == int(reverse))
+        if x < 0:
+            return False
+        if x < 10:
+            return True; 
+        temp = x
+        reverse = 0
+        length = math.floor(math.log(x,10)/2)
+        while (temp > length):
+            reverse = reverse*10 + temp%10 
+            temp = math.floor(temp/10)
+        if (x % 2 == 0):
+            return bool(reverse -  temp)
+        reverse = math.floor(reverse/10)
+        return bool(reverse -  temp)
+        print(x)
+        print(reverse)
+        return bool(x == int(reverse))
 
         # also attempted hashmap
         # if x < 0:

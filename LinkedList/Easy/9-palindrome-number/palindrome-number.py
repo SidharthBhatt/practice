@@ -3,9 +3,9 @@ class Solution:
     def isPalindrome(self, x: int) -> bool:
 
         # string method
-        temp = str(x)
-        reverse = temp[::-1]
-        return bool(temp == reverse)
+        # temp = str(x)
+        # reverse = temp[::-1]
+        # return bool(temp == reverse)
         
         # pure math method 
         if x < 0:
@@ -14,17 +14,15 @@ class Solution:
             return True; 
         temp = x
         reverse = 0
-        length = math.floor(math.log(x,10)/2)
-        while (temp > length):
+        length = math.floor(math.log10(x))+1
+        for i in range(math.floor(length/2)):
             reverse = reverse*10 + temp%10 
             temp = math.floor(temp/10)
-        if (x % 2 == 0):
-            return bool(reverse -  temp)
-        reverse = math.floor(reverse/10)
-        return bool(reverse -  temp)
-        print(x)
-        print(reverse)
-        return bool(x == int(reverse))
+        if (length % 2 == 0):
+            return bool(reverse -  temp == 0)
+        temp = math.floor(temp/10)
+        return bool(reverse -  temp == 0)
+    
 
         # also attempted hashmap
         # if x < 0:

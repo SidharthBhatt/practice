@@ -3,23 +3,23 @@ class Solution:
     def isPalindrome(self, x: int) -> bool:
 
         # string method
-        # temp = str(x)
-        # reverse = temp[::-1]
-        # return bool(temp == reverse)
+        temp = str(x)
+        reverse = temp[::-1]
+        return bool(temp == reverse)
         
         # pure math method 
-        if x < 0:
-            return False
-        if x < 10:
-            return True; 
-        temp = x
-        reverse = 0
-        while (temp > 0):
-            reverse = reverse*10 + temp%10 
-            temp = math.floor(temp/10)
-        print(x)
-        print(reverse)
-        return bool(x == int(reverse))
+        # if x < 0:
+        #     return False
+        # if x < 10:
+        #     return True; 
+        # temp = x
+        # reverse = 0
+        # while (temp > 0):
+        #     reverse = reverse*10 + temp%10 
+        #     temp = math.floor(temp/10)
+        # print(x)
+        # print(reverse)
+        # return bool(x == int(reverse))
 
         # also attempted hashmap
         # if x < 0:

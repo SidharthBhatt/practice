@@ -3,9 +3,7 @@ class Solution:
     def groupAnagrams(self, strs: list[str]) -> list[list[str]]:
         my_dict = {}
         for index, word in enumerate(strs):
-            print(Counter(word))
             countedWord = tuple(sorted(Counter(word).items()))
-            print(countedWord)
             small_list = []
             if countedWord in my_dict:
                 small_list = my_dict[countedWord]

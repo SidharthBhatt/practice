@@ -20,6 +20,8 @@ class Solution:
                     if count > 0:
                         ans.append(number)
                         count -= 1
+                        if count == 0: 
+                            return ans
                     else:
                         return ans
         

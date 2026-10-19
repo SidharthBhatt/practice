@@ -15,12 +15,15 @@ class Solution:
         count = k
         ans = []
         for frequency in range(len(nums), 0, -1):
-            for number in flipped_dictionary[frequency]:
-                if count > 0:
-                    ans.append(number)
-                    count -= 1
-                else:
-                    return ans
+            if count > 0:
+                for number in flipped_dictionary[frequency]:
+                    if count > 0:
+                        ans.append(number)
+                        count -= 1
+                    else:
+                        return ans
+            else:
+                return ans
 
                 
         return ans

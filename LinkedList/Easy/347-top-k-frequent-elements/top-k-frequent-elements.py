@@ -3,9 +3,9 @@ class Solution:
     def topKFrequent(self, nums: list[int], k: int) -> list[int]:
         dictionary = {}
         for i in nums:
-            try: 
+            if i in dictionary:
                 dictionary[i] += 1
-            except KeyError:
+            else: 
                 dictionary[i] = 1 
         flipped_dictionary = defaultdict(list)
     

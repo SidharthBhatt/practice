@@ -1,9 +1,7 @@
 class Solution:
     def isPalindrome(self, s: str) -> bool:
-        length = len(s)
-        half = length//2 
         posA = 0
-        posB = length-1
+        posB = len(s)-1
         while posA < posB:
             if s[posA].isalnum() and s[posB].isalnum():
                 if s[posA].lower() != s[posB].lower():
@@ -11,6 +9,9 @@ class Solution:
                 else:
                     posA+= 1
                     posB-= 1 
+            elif s[posA].isalnum() is False and s[posB].isalnum() is False:
+                posA+= 1
+                posB-= 1
             elif s[posB].isalnum():
                 posA+= 1
             else:

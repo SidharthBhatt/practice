@@ -9,7 +9,7 @@ class Solution:
                 else:
                     posA+= 1
                     posB-= 1 
-            elif s[posA].isalnum() is False and s[posB].isalnum() is False:
+            elif not s[posA].isalnum() and not s[posB].isalnum():
                 posA+= 1
                 posB-= 1
             elif s[posB].isalnum():

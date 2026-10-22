@@ -3,35 +3,29 @@ class Solution:
         if len(prices) < 2:
             return 0
         if prices[0] > prices[1]:
-            min = [prices[1]]
-            max = [prices[1]]
+            minimum = [prices[1]]
+            maximum = [prices[1]]
         else:
-            min = [prices[0]]
-            max = [prices[1]]
-        min_pos = 0
-        max_pos = 0
-        max_profit = 0
+            minimum = [prices[0]]
+            maximum = [prices[1]]
+        minimum_pos = 0
+        maximum_pos = 0
+        maximum_profit = 0
         for i in range(2,len(prices)):
-            if prices[i] < min[min_pos]:
-                min.append(prices[i])
-                max.append(prices[i])
-                min_pos += 1 
+            if prices[i] < minimum[minimum_pos]:
+                minimum.append(prices[i])
+                maximum.append(prices[i])
+                minimum_pos += 1 
             else:
-                max.append(prices[i]) 
-                min.append(min[min_pos])
-                max_pos += 1
-                min_pos += 1
+                maximum.append(prices[i]) 
+                minimum.append(minimum[minimum_pos])
+                maximum_pos += 1
+                minimum_pos += 1
         
-        if len(max) > len(min):
-            length = len(min)
-        else:
-            length = len(max)
-        print(min)
-        print(max)
-        for i in range(length):
-            if max[i] - min[i] > max_profit:
-                max_profit = max[i] - min[i]
-        return max_profit
+        for i in range(len(maximum)):
+            if maximum[i] - minimum[i] > maximum_profit:
+                maximum_profit = maximum[i] - minimum[i]
+        return maximum_profit
 
 
         

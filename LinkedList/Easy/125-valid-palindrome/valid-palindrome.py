@@ -6,7 +6,6 @@ class Solution:
         for c in s:
             if c.isalnum():
                 cleaned.append(c)
-        print(cleaned)
         length = len(cleaned)
         half = length//2 
         for i in range(0,half):

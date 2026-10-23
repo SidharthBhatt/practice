@@ -2,7 +2,7 @@ class Solution:
     def maxProfit(self, prices: list[int]) -> int:
         maximum_profit = 0 
         minimum = prices[0]
-        for price in prices[1:]:
+        for price in prices:
             if price < minimum:
                 minimum = price
             if price - minimum > maximum_profit:

@@ -1,11 +1,6 @@
-
-class Solution(object):
-    def twoSum(self, nums, target):
-        """
-        :type nums: List[int]
-        :type target: int
-        :rtype: List[int]
-        """
+from collections import defaultdict
+class Solution:
+    def twoSum(self, nums: list[int], target: int) -> list[int]:
         hash_map = {}
         for i_index, i in enumerate(nums):
             hash_map[target - i ] = i_index
@@ -15,5 +10,3 @@ class Solution(object):
                     return [hash_map[v], v_index]
             except: 
                 pass
-            
-        
